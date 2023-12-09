@@ -1,0 +1,120 @@
+Трансформации конфигурируются в XML файлах, затем в коде программы считываются и присваиваются View-элементам.
+Я не буду дублировать хелп и все расписывать, а сразу перейду к практике.
+
+В нашем проекте есть папка res. Надо в ней создать папку anim. Сделать это можно, например, так:  правой кнопкой на res и в меню выбираем New -> Folder.
+В папке anim надо создать файлы. Делается это аналогично: правой кнопкой на anim и в меню выбираем New -> File. В этих файлах будем конфигурировать анимацию.
+
+Я использовал не все возможности и параметры.
+Есть еще, например, параметр android:startOffset – он указывает задержку при старте анимации.
+Т.е. если указать android:startOffset=”1000”, то анимация начнется через секунду.
+Это удобно использовать если вы делаете набор трансформ (<set>) и вам надо чтобы они
+запускались не одновременно, а в определенном порядке.
+Также полезный параметр android:repeatCount – это количество повторов.
+Рекомендую поиграть параметрами в XML файлах и посмотреть, что получается.
+
+Создаем следующие файлы в папке res/anim:
+
+Имя файла: myalpha.xml
+
+Имя файла: myalpha.xml
+
+Содержимое:
+
+<?xml version="1.0" encoding="utf-8"?>
+<alpha
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="0.0"
+    android:toAlpha="1.0"
+    android:duration="3000">
+</alpha>
+
+
+Описание трансформации: меняется прозрачность с 0 до 1 в течение трех секунд.
+
+
+
+Имя файла: myscale.xml
+
+Содержимое:
+
+<?xml version="1.0" encoding="utf-8"?>
+<scale
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="0.1"
+    android:toXScale="1.0"
+    android:fromYScale="0.1"
+    android:toYScale="1.0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="3000">
+</scale>
+
+
+Описание трансформации: изменение размера с 0.1 от оригинальной ширины и высоты до 1. Точка, относительно которой будет производиться масштабирование, лежит ровно посередине объекта (pivotX, pivotY). Продолжительность – 3 сек.
+
+
+
+Имя файла: mytrans.xml
+
+Содержимое:
+
+<?xml version="1.0" encoding="utf-8"?>
+<translate
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="-150"
+    android:toXDelta="0"
+    android:fromYDelta="-200"
+    android:toYDelta="0"
+    android:duration="3000">
+</translate>
+
+
+Описание трансформации: перемещение с -150 относительно текущей позиции по оси X и -200 по оси Y в текущую позицию (0,0). Продолжительность – 3 сек.
+
+
+
+Имя файла: myrotate.xml
+
+Содержимое:
+
+<?xml version="1.0" encoding="utf-8"?>
+<rotate
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360"
+    android:duration="3000">
+</rotate>
+
+
+Описание трансформации: поворот относительно левого верхнего угла (т.к. не указаны pivotX, pivotY) на 360 градусов в течение трех секунд
+
+
+
+Имя файла: mycombo.xml
+
+Содержимое:
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="360"
+        android:duration="3000"
+        android:pivotX="50%"
+        android:pivotY="50%">
+    </rotate>
+    <scale
+        android:fromXScale="0.1"
+        android:toXScale="1.0"
+        android:fromYScale="0.1"
+        android:toYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="3000">
+    </scale>
+</set>
+
+
+Описание трансформации: одновременно увеличение размера и вращение в течение трех секунд. Обратите внимание, для комбинации трансформ использован тег <set>

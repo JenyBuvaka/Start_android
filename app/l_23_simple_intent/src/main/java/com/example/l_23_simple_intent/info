@@ -1,0 +1,50 @@
+Мы знаем, что Intent имеет атрибут action. С помощью этого атрибута обычно дается указание действия. Например, просмотр или редактирование.
+Но действие обычно совершается не просто так, а с чем-либо. Значит кроме указания действия, мы должны указывать на объект, с которым эти действия нужно произвести.
+ Для этого Intent имеет атрибут data.
+
+Один из способов присвоения значения этому атрибуту – метод setData (Uri data) у объекта Intent. На вход этому методу подается объект Uri.
+
+Uri – это объект, который берет строку, разбирает ее на составляющие и хранит в себе эту информацию. Строка, конечно, должна быть не любая,
+а составлена в соответствии с этим документом RFC 2396. Uri имеет кучу методов, которые позволяют извлекать из распарсенной строки отдельные элементы.
+
+Я создам объект Uri из строки, а в лог буду выводить название метода и (через двоеточие) значение, которое он возвращает. Например возьмем такую строку - http адрес
+Uri uri = Uri.parse("http://developer.android.com/reference/android/net/Uri.html")
+
+Смотрим, чего нам возвращают методы:
+
+uri.getScheme(): http
+uri.getSchemeSpecificPart(): //developer.android.com/reference/android/net/Uri.html
+uri.getAuthority(): developer.android.com
+uri.getHost(): developer.android.com
+uri.getPath(): /reference/android/net/Uri.html
+uri.getLastPathSegment(): Uri.html
+
+Uri uri = Uri.parse("ftp://bob @ google.com:80/data/files")
+
+(Код, написанный выше, идет одной строкой на самом деле. Здесь идут пробелы вокруг @ из-за особенностей разметки)
+
+uri.getScheme(): ftp
+uri.getSchemeSpecificPart(): //bob@google.com:80/data/files
+uri.getAuthority(): bob@google.com:80
+uri.getHost(): google.com
+uri.getPort(): 80
+uri.getPath(): /data/files
+uri.getLastPathSegment(): files
+uri.getUserInfo(): bob
+
+Координаты:
+Uri uri = Uri.parse("geo:55.754283,37.62002");
+uri.getScheme(): geo
+uri.getSchemeSpecificPart(): 55.754283,37.62002
+
+Здесь уже получилось выделить только Scheme и SchemeSpecificPart.
+
+Номер телефона
+
+Uri uri = Uri.parse("tel:12345");
+uri.getScheme(): tel
+uri.getSchemeSpecificPart():12345
+
+Аналогично, получилось выделить только две части из строки.
+В этом примере Scheme равен content. Это особый тип данных – Content Provider.
+Он позволяет любой программе давать доступ к своим данным, а другим программам – читать и менять эти данные.

@@ -1,0 +1,46 @@
+Мы достаточно подробно разобрали метод query. Но не рассмотрели, как с его помощью выполнять запросы для связанных таблиц.
+Создадим простое приложение, которое будет делать запрос из двух таблиц и выводить результат в лог. Таблицы будут people и position.
+В первую (people) запишем список людей, во вторую (position) – список должностей. И для каждого человека в people будет прописан id
+ должности из position
+  должен быть вот такой лог
+  --- onCreate database ---
+  --- Table position ---
+  id = 1; name = Директор; salary = 15000;
+  id = 2; name = Программер; salary = 13000;
+  id = 3; name = Бухгалтер; salary = 10000;
+  id = 4; name = Охранник; salary = 8000;
+  --- ---
+  --- Table people ---
+  id = 1; name = Иван; posid = 2;
+  id = 2; name = Марья; posid = 3;
+  id = 3; name = Петр; posid = 2;
+  id = 4; name = Антон; posid = 2;
+  id = 5; name = Даша; posid = 3;
+  id = 6; name = Борис; posid = 1;
+  id = 7; name = Костя; posid = 2;
+  id = 8; name = Игорь; posid = 4;
+  --- ---
+
+  Вывели данные по таблицам раздельно.
+
+
+
+  --- INNER JOIN with rawQuery---
+  Name = Иван; Position = Программер; Salary = 13000;
+  Name = Петр; Position = Программер; Salary = 13000;
+  Name = Антон; Position = Программер; Salary = 13000;
+  Name = Борис; Position = Директор; Salary = 15000;
+  Name = Костя; Position = Программер; Salary = 13000;
+  --- ---
+
+  Вывели данные из rawQuery. ЗП > 12000
+
+
+
+  --- INNER JOIN with query---
+  Name = Марья; Position = Бухгалтер; Salary = 10000;
+  Name = Даша; Position = Бухгалтер; Salary = 10000;
+  Name = Игорь; Position = Охранник; Salary = 8000;
+  --- ---
+
+  Вывели данные из query. ЗП < 12000

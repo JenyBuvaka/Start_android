@@ -1,0 +1,30 @@
+В этом уроке:
+
+- используем Header и Footer в списках
+- разбираемся, как и где используется HeaderViewListAdapter
+
+
+
+Header и Footer (далее по тексту HF) – это View, которые могут быть добавлены к списку сверху и снизу. За создание соответствующих View для пунктов списка отвечает уже не адаптер, а программист. Он должен сам создать View и предоставить его списку в методы addHeader или addFooter.
+
+У этих методов есть две реализации. Рассмотрим на примере Header.
+
+1) addHeaderView (View v, Object data, boolean isSelectable)
+
+v – View, которое отобразится, как пункт списка
+data – объект, связанный с этим пунктом списка
+isSelectable – можно ли будет кликать на пункт или выделять его
+
+2) addHeaderView (View v)
+
+Тут просто идет вызов первого метода с параметрами: addHeaderView(v, null, true);
+
+
+
+При использовании HF и адаптера есть нюанс. При присвоении списку адаптера (метод setAdapter), список проверяет, были ли уже добавлены Header или Footer.
+
+Если нет, то список использует данный ему адаптер и запрещает в дальнейшем добавлять себе HF. Это же написано в хелпе методов addHeader и addFooter – «Call this before calling setAdapter». Т.е. вы должны добавить HF до того, как присвоите адаптер списку.
+
+Если да, то список оборачивает полученный адаптер в HeaderViewListAdapter, используя конструктор: HeaderViewListAdapter (ArrayList<ListView.FixedViewInfo> headerViewInfos, ArrayList<ListView.FixedViewInfo> footerViewInfos, ListAdapter adapter), где headerViewInfos и footerViewInfos – это ранее добавленные к списку HF, а adapter – тот адаптер, который мы даем списку. И теперь при работе списка будут использоваться методы адаптера HeaderViewListAdapter, т.е. будут использоваться как HF, так и данные из адаптера, который присвоили списку.
+
+Посмотрим на практике.

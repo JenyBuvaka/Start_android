@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="jbr-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/l_10_contextmenu" />
+            <option value="$PROJECT_DIR$/app/l_11_dinamiclayout" />
+            <option value="$PROJECT_DIR$/app/l_12_dinamiclayout2" />
+            <option value="$PROJECT_DIR$/app/l_13_dnaiclayout3" />
+            <option value="$PROJECT_DIR$/app/l_14_simplecalculator" />
+            <option value="$PROJECT_DIR$/app/l_15_simple_animation" />
+            <option value="$PROJECT_DIR$/app/l_16_one_activity_state" />
+            <option value="$PROJECT_DIR$/app/l_17_two_aactivity_state" />
+            <option value="$PROJECT_DIR$/app/l_18_intent_filter_27" />
+            <option value="$PROJECT_DIR$/app/l_19_getintent_action" />
+            <option value="$PROJECT_DIR$/app/l_1_layoutprop" />
+            <option value="$PROJECT_DIR$/app/l_20_intent_extras" />
+            <option value="$PROJECT_DIR$/app/l_21_simple_activity_result" />
+            <option value="$PROJECT_DIR$/app/l_22_activity_result_31" />
+            <option value="$PROJECT_DIR$/app/l_23_simple_intent" />
+            <option value="$PROJECT_DIR$/app/l_24_shared_prefences" />
+            <option value="$PROJECT_DIR$/app/l_24_simple_browser" />
+            <option value="$PROJECT_DIR$/app/l_25_simple_sq_lite" />
+            <option value="$PROJECT_DIR$/app/l_26" />
+            <option value="$PROJECT_DIR$/app/l_26_simple_sq_liter" />
+            <option value="$PROJECT_DIR$/app/l_26_sqlitequery" />
+            <option value="$PROJECT_DIR$/app/l_27_sqliteinnerjoin" />
+            <option value="$PROJECT_DIR$/app/l_28_sqlitetransaction" />
+            <option value="$PROJECT_DIR$/app/l_29_sqliteonupgradedb" />
+            <option value="$PROJECT_DIR$/app/l_2_viewbyld" />
+            <option value="$PROJECT_DIR$/app/l_30_layoutinflater" />
+            <option value="$PROJECT_DIR$/app/l_31_layout_inflater_list" />
+            <option value="$PROJECT_DIR$/app/l_32_simple_list" />
+            <option value="$PROJECT_DIR$/app/l_33_simple_list_choice" />
+            <option value="$PROJECT_DIR$/app/l_34_simple_list_events" />
+            <option value="$PROJECT_DIR$/app/l_3_onclickbutton" />
+            <option value="$PROJECT_DIR$/app/l_4_llistener" />
+            <option value="$PROJECT_DIR$/app/l_5_activitylistener" />
+            <option value="$PROJECT_DIR$/app/l_6_resvalues" />
+            <option value="$PROJECT_DIR$/app/l_7_logndmess" />
+            <option value="$PROJECT_DIR$/app/l_8_menusimple" />
+            <option value="$PROJECT_DIR$/app/l_9_menuadv" />
+            <option value="$PROJECT_DIR$/l_35_expandable_list" />
+            <option value="$PROJECT_DIR$/l_36_expandable_list_events" />
+            <option value="$PROJECT_DIR$/l_37_simple_adapter" />
+            <option value="$PROJECT_DIR$/l_38_simple_adapter_custom1" />
+            <option value="$PROJECT_DIR$/l_39_simple_adapter_customs2" />
+            <option value="$PROJECT_DIR$/l_40_Simple_Adapter_Data" />
+            <option value="$PROJECT_DIR$/l_41_custom_adapter" />
+            <option value="$PROJECT_DIR$/l_42_header_foter" />
+            <option value="$PROJECT_DIR$/l_43_spinner" />
+            <option value="$PROJECT_DIR$/l_44_gridview" />
+            <option value="$PROJECT_DIR$/l_45_time_picker_dialog" />
+            <option value="$PROJECT_DIR$/l_46_date_picker_dialog" />
+            <option value="$PROJECT_DIR$/l_47_alert_dialog_simple" />
+            <option value="$PROJECT_DIR$/l_48_alert_dialog_prepare" />
+            <option value="$PROJECT_DIR$/l_49_alert_dialogitems" />
+            <option value="$PROJECT_DIR$/l_50_alert_dialogs_items_multi" />
+            <option value="$PROJECT_DIR$/l_51_alert_dialog_custom" />
+            <option value="$PROJECT_DIR$/l_52_alert_dialog_operation" />
+            <option value="$PROJECT_DIR$/l_53_progress_dialog" />
+            <option value="$PROJECT_DIR$/l_54_parcel" />
+            <option value="$PROJECT_DIR$/l_55_parcelable" />
+            <option value="$PROJECT_DIR$/l_56_saveinstance_state" />
+            <option value="$PROJECT_DIR$/l_57_prefences_simple" />
+            <option value="$PROJECT_DIR$/l_58_preferences_simple2" />
+            <option value="$PROJECT_DIR$/l_59_prefences_enable" />
+            <option value="$PROJECT_DIR$/l_60_preferences_code" />
+            <option value="$PROJECT_DIR$/l_61_files" />
+            <option value="$PROJECT_DIR$/test" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
